@@ -12,6 +12,13 @@ class TextType(Enum):
     LINK = 4 # [anchor text](url)
     IMAGE = 5 # ![alt text](url)
 
+text_type_characters: dict[TextType, str] = {
+    TextType.TEXT: "", 
+    TextType.BOLD: "**",
+    TextType.ITALIC: "_",
+    TextType.CODE: "`",
+}
+
 class TextNode:
     def __init__(self, text: str, text_type: TextType = TextType.TEXT, \
                  url: str | None = None) -> None:
